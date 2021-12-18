@@ -27,3 +27,48 @@ li {
     font-size: 18px;
     padding-bottom: 1em;
 }
+
+.popup {
+    position:absolute;
+    top:37%;
+    left:37%;
+    border-radius: 10%;
+    background-color: azure;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    padding: 10px;
+    width: 400px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    cursor: pointer;
+}
+
+.popup-content {
+    margin-left: 10px;
+}
+.popup-content h2 {
+    text-align: center;
+
+}
+
+.form-element {
+    margin: 15px 0px;
+}
+
+
+.popup .popup-content .form-element input[type="text"] {
+    margin-top:5px;
+    display:block;
+    width:85%;
+    padding:10px;
+    border-radius: 5px;
+} 
+
+.popup .popup-content .form-element button {
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+}

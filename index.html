@@ -13,6 +13,42 @@
         <h1>Library</h1>
     </div>
     <button onclick="newBook()">Add New Book</button>
+
+    <div class="popup">
+        <form class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h2>New Book</h2>
+            <div class="form-element">
+                <label for="title">Title</label>
+                <input type="text" id ="title" placeholder="Enter Title">
+            </div>
+            <div class="form-element">
+                <label for="author">Author</label>
+                <input type="text" id ="author" placeholder="Enter Author">
+            </div>
+            <div class="form-element">
+                <label for="pages">Pages</label>
+                <input type="text" id ="pages" placeholder="Enter Number of Pages">
+            </div>
+            <div class="form-element">
+                <label for="genre">Genre</label>
+                <input type="text" id ="genre" placeholder="Enter Genre">
+            </div>
+            <div class="form-element">
+                <input type="checkbox" id ="read">
+                <label for="Read">Read</label>
+            </div>
+            <div class="form-element">
+                <button>Add</button>
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+
     <div class="flex-container">
         <div class="cards">
             <div class="card">
@@ -26,5 +62,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
