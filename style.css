@@ -9,13 +9,15 @@
 }
 
 .card {
-    display: grid;
     grid-template-rows: max-content 200px 1fr;
     background-color: aliceblue;
     padding: 10px;
     border-radius: 10%;
 }
 
+.card button {
+    cursor: pointer;
+}
 ul {
     padding-left: 15px;
     list-style: none;
@@ -30,13 +32,27 @@ li {
 
 .popup {
     position:absolute;
-    top:37%;
+    top:-137%;
     left:37%;
+    opacity:0;
+    transform:translate(-50%, -50%) scale (1.25);
     border-radius: 10%;
     background-color: azure;
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
     padding: 10px;
     width: 400px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+
+.popup-active {
+    top: 37%;
+    opacity:1;
+    transform:translate(-50%, -50%) scale (1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
 }
 
 .close-btn {
@@ -67,8 +83,13 @@ li {
     border-radius: 5px;
 } 
 
-.popup .popup-content .form-element button {
+.form-element button{
     width: 90%;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
+
+.form-element input[type="checkbox"]{
+    cursor: pointer;
+}
+

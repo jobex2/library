@@ -12,11 +12,10 @@
     <div class='header'>
         <h1>Library</h1>
     </div>
-    <button onclick="newBook()">Add New Book</button>
-
+    <button onclick="openBook()">Add New Book</button>
     <div class="popup">
         <form class="popup-content">
-            <button class="close-btn">&times;</button>
+            <button type="button" class="close-btn" onclick="closePopup()">&times;</button>
             <h2>New Book</h2>
             <div class="form-element">
                 <label for="title">Title</label>
@@ -35,33 +34,27 @@
                 <input type="text" id ="genre" placeholder="Enter Genre">
             </div>
             <div class="form-element">
-                <input type="checkbox" id ="read">
-                <label for="Read">Read</label>
+                <input type="checkbox" id ="read" value="true">
+                <label for="read">Read</label>
             </div>
             <div class="form-element">
-                <button>Add</button>
+               <button type="button" onclick="newBook(form)">Add</button>
             </div>
-
         </form>
-
-
-
-
     </div>
-
-    <div class="flex-container">
-        <div class="cards">
-            <div class="card">
-                <h3>Title</h3>
-                <ul>
-                    <li>By: ~~~~~~</li>
-                    <li>Pages: ~~~~~~</li>
-                    <li>Genre: ~~~~~~</li>
-                    <li>Date Read: ~~~~~~</li>
-                </ul>
-            </div>
+    <div class="cards">
+        <div class="card" id="69">
+            <h3>Title</h3>
+            <ul>
+                <li>By: ~~~~~~</li>
+                <li>Pages: ~~~~~~</li>
+                <li>Genre: ~~~~~~</li>
+                <li>Read: ~~~~~~</li>
+            </ul> 
+            <button onclick="removeBook(parentNode)">Remove</button>
         </div>
     </div>
+
 
 </body>
 </html>
