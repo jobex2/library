@@ -13,11 +13,12 @@ Book.prototype.info = function ()
     `${this.title} by ${this.author}, ${this.pages} pages, not yet read`;
 }
 
-addBookToLibrary('The End', 'God', 666, 'Religion', false);
+/* addBookToLibrary('The End', 'God', 666, 'Religion', false);
 addBookToLibrary('The Beginning', 'God', 7,'Religion', false);
-addBookToLibrary('You Smell', 'Armpits', 2,'Health', false);
+addBookToLibrary('You Smell', 'Armpits', 2,'Health', false); */
 
 displayBooks();
+
 
 
 //function definitions 
@@ -59,6 +60,7 @@ function displayBooks()
         list.appendChild(listItem);
 
         listItem = document.createElement('li')
+        listItem.classList.add('read');
         if(book.read)
         {
             listItem.textContent = `Read: Yes`
@@ -72,11 +74,25 @@ function displayBooks()
         btn.setAttribute("onclick", "removeBook(parentNode)");
         btn.textContent = "Remove"
 
+        const toggle = document.createElement('label');
+        toggle.classList.add("switch");
+
+        const input = document.createElement('input');
+        input.id = "switchValue";
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("onclick", "readChange(this)");
+        toggle.appendChild(input);
+
+        const span = document.createElement('span');
+        span.classList.add("slider", "round");
+        toggle.appendChild(span);
+
         list.appendChild(listItem);
         div.appendChild(title);
         div.appendChild(list);
         cards.appendChild(div);
         div.appendChild(btn);
+        div.appendChild(toggle);
     });
 }
 function removeBookDisplay()
@@ -128,8 +144,10 @@ function newBook(form)
     addBookToLibrary(form.title.value, form.author.value, form.pages.value, 
         form.genre.value, haveRead );
 
+    
     removeBookDisplay();
-    displayBook();
+    displayBooks();
+    form.reset();
 
 }
 function removeBook(card)
@@ -141,4 +159,20 @@ function removeBook(card)
     }
     card.remove();
     myLibrary.splice(card.id, 1);
+}
+function readChange(toggle)
+{
+    let index = toggle.parentNode.parentNode.id;
+    const card = toggle.parentNode.parentNode;
+    const read = card.querySelector('.read');
+    if(toggle.checked)
+    {
+        myLibrary[index].read = true;
+        read.textContent = `Read: Yes`
+    }
+    else
+    {
+        myLibrary[index].read = false;
+        read.textContent = `Read: No`   
+    }
 }

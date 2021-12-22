@@ -49,9 +49,13 @@
                 <li>By: ~~~~~~</li>
                 <li>Pages: ~~~~~~</li>
                 <li>Genre: ~~~~~~</li>
-                <li>Read: ~~~~~~</li>
-            </ul> 
+                <li class="read">Read: ~~~~~~</li>
+            </ul>
             <button onclick="removeBook(parentNode)">Remove</button>
+            <label class="switch">
+                <input type="checkbox" id="switchValue" onclick="readChange(this)">
+                <span class="slider round"></span>
+            </label>
         </div>
     </div>
 
